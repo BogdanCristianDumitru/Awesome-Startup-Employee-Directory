@@ -1,3 +1,78 @@
+/* Mobile View */
 * {
     box-sizing: border-box;
 }
+body {
+    position: relative;
+}
+.avatar {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin: 1.5em 0 1.5em;
+}
+.card {
+    display: flex;  
+    justify-content: space-around;
+    align-items: center;
+    width: 96%;
+    margin: .8em auto .8em;
+    border: 2px solid rgb(223, 226, 226);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.text-container .name {
+    font-size: 1.2em;
+    margin-bottom: 0;
+}
+.text-container p {
+    margin: 5px 0 5px;
+}
+
+    .grid-container {
+        max-width: 1024px;
+        width: 98%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+    h1 {
+        text-align: left;
+        margin: 1.8em 0 .7em .6em;
+    }
+
+    /* The Modal Window*/
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(100, 100, 100, 0.4)
+    }
+    .modal {
+        width: 380px;
+        position: relative;
+        margin: 15% auto;
+        background-color: #fff;
+        text-align: center;
+        border: 1px solid #778;
+        border-radius: 10px;
+        padding: 30px 20px;
+    }
+    .modal-close {
+        position: absolute;
+        margin-top: 5px;
+        right: 18px;
+        top: 7px;
+        cursor: pointer;
+    }
+    .text-container hr {
+        margin: 2em 0 2em;
+        border-color: rgb(245, 246, 244, .5)
+    }
+    .hidden {
+        display: none;
+    }
+
