@@ -3,9 +3,8 @@
     box-sizing: border-box;
 }
 body {
-    position: relative;
-    max-width: 1050px;
     margin: 0 auto;
+    max-width: 1050px;
 } 
 .search_type {
     width: 40%;
@@ -64,24 +63,25 @@ body {
 
     /* The Modal Window*/
     .overlay {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        background: rgba(100, 100, 100, 0.4)
+        background: rgba(100, 100, 100, 0.4);
     }
     .modal {
-        max-width: 500px;
         width: 380px;
         position: relative;
-        margin: 15% auto;
         background-color: #fff;
         text-align: center;
         border: 1px solid #778;
         border-radius: 10px;
         padding: 30px 20px;
-    }
+    } 
     .modal-close {
         position: absolute;
         margin-top: 5px;
@@ -100,18 +100,16 @@ body {
         display: none;
     }
     .modal-content {
+        max-width: 500px;
         padding-bottom: 20px;
     }
-    .prev-btn {
-        position: fixed;
-        left: 380px;
-        border-radius: 5px;
-        background-color: #fff;
-        border: none;
+    .modal-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
-    .next-btn {
-        position: fixed;
-        right: 380px;
+    .prev-btn, 
+    .next-btn  {
         border-radius: 5px;
         background-color: #fff;
         border: none;
