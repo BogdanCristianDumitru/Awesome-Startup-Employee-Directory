@@ -11,18 +11,17 @@ const employeeSearch = document.getElementById('employee_search');
 // Fetch data from API
 fetch(urlAPI)
   .then(res => res.json())
-  //.then(res => console.log(res.results))
   .then(res => res.results)
   .then(displayEmployees)
   .catch(err => console.log(err))
 
+  // Display employees function
   function displayEmployees(employeeData) {
     employees = employeeData;
 
-    // Store the empoyee HTML
     let employeeHTML = "";
 
-    // loop through each employee and create HTML markup
+    // Loop through each employee and create HTML markup
     employees.forEach((employee, index) => {
         let name = employee.name;
         let email = employee.email;
@@ -44,8 +43,9 @@ fetch(urlAPI)
     gridContainer.innerHTML = employeeHTML;
   }
 
+  // Display filtered employess function
   function displayFilteredEmployees(filteredEmployess) {
-    // Store the filtered employee HTML
+
     let filteredEmployeeHTML = '';
 
     filteredEmployess.forEach((employee, index) => {
@@ -68,6 +68,7 @@ fetch(urlAPI)
     gridContainer.innerHTML = filteredEmployeeHTML;
   }
 
+  // Function display modal
   function displayModal(index) {
     let { name, dob, phone, email, location: { city, street, postcode}, picture } = employees[index];
 
@@ -94,24 +95,22 @@ fetch(urlAPI)
     modalContainer.innerHTML = modalHTML;
     }
 
+    // Calculate the index of the previous employee function
     function showPrevEmployee(currentIndex) {
-        // Calculate the index of the previous employee
         let prevIndex = (currentIndex - 1 + employees.length) % employees.length;
         displayModal(prevIndex); // Display modal for the previous employee
     }
     
+    // Calculate the index of the next employee function 
     function showNextEmployee(currentIndex) {
-        // Calculate the index of the next employee
         let nextIndex = (currentIndex + 1) % employees.length;
         displayModal(nextIndex); // Display modal for the next employee
     }
 
 
-   // gridContainer eventListener
+   // Modal eventListener
     gridContainer.addEventListener('click', e => {
-        // make sure the click is not on the gridContainer itself
         if (e.target !== gridContainer) {
-        // select the card element based on its proximity to actual element clicked
             const card = e.target.closest(".card");
             const index = card.getAttribute('data-index');
             displayModal(index);
@@ -121,19 +120,17 @@ fetch(urlAPI)
     modalClose.addEventListener('click', () => {
         overlay.classList.add("hidden");
     });
-
     
-    // Filtered Employees eventListener 
+    // Filtered employees eventListener 
   employeeSearch.addEventListener('keyup', e => {
     let currentValue = e.target.value.toLowerCase();
 
-    // Filter employees based on the search value
+    // filter employees based on the search value
     let filteredEmployess = employees.filter(employee => {
         let fullName = `${employee.name.first} ${employee.name.last}`.toLowerCase();
         return fullName.includes(currentValue);
     })
 
-    //Display filetered employees
     displayFilteredEmployees(filteredEmployess);
   });
 
