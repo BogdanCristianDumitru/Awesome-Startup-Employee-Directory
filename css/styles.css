@@ -101,14 +101,14 @@ body {
     }
     .prev-btn {
         position: fixed;
-        left: 350px;
+        left: 380px;
         border-radius: 5px;
         background-color: #fff;
         border: none;
     }
     .next-btn {
         position: fixed;
-        right: 350px;
+        right: 380px;
         border-radius: 5px;
         background-color: #fff;
         border: none;
