@@ -4,6 +4,8 @@
 }
 body {
     position: relative;
+    max-width: 1050px;
+    margin: 0 auto;
 } 
 .search_type {
     width: 40%;
